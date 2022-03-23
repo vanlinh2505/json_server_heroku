@@ -14,7 +14,10 @@ server.use(middlewares)
     // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser)
     //  enable CORS is with the cors library.
-server.use(cors());
+server.use(cors({
+    credentials: true,
+    origin: "*",
+}));
 
 
 server.use('/api', router)
